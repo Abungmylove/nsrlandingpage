@@ -7,7 +7,7 @@ import {
 
 import { ArrowRight } from "lucide-react";
 
-import heroBg from "@/assets/bg5.jpeg";
+import heroBg from "@/assets/fix-halaman-depan.jpeg";
 import secondImg from "@/assets/bg4.png";
 
 const HeroSection = () => {
@@ -104,7 +104,6 @@ const HeroSection = () => {
           style={{ y: textY }}
           className="max-w-2xl md:max-w-3xl lg:max-w-2xl xl:max-w-3xl"
         >
-          {/* 🎯 UPGRADE DI SINI: Di HP berubah dari text-4xl jadi text-5xl biar lebih besar & mantap */}
           <h1
             className="
               text-5xl

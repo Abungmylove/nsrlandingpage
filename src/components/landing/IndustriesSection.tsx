@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import constructionImg from "@/assets/industry-construction.jpg";
-import packagingImg from "@/assets/industry-packaging.jpg";
-import metalCoatingImg from "@/assets/industry-metal-coating.jpg";
-import additives from "@/assets/additives.jpg";
+import constructionImg from "@/assets/fix-construction-hero.png";
+import packagingImg from "@/assets/fix-printing-packaging.png";
+import industrialCoatingImg from "@/assets/fix-industrial-coating.png";
+import additivesImg from "@/assets/additives.jpg";
 
 const topIndustries = [
   {
@@ -19,7 +19,7 @@ const topIndustries = [
   {
     id: "industrial-coating",
     title: "Industrial Coating",
-    image: metalCoatingImg,
+    image: industrialCoatingImg,
   },
 ];
 
@@ -27,7 +27,7 @@ const bottomIndustries = [
   {
     id: "additives",
     title: "Additives",
-    image: additives,
+    image: additivesImg,
   },
   {
     id: "others",
