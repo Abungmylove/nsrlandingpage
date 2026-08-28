@@ -26,11 +26,11 @@ import defoamerImg from "@/assets/fix-defoamer.png";
 import levelingImg from "@/assets/fix-leveling.png";
 import dispersingImg from "@/assets/fix-dispersing.png";
 import heroFrontImg from "@/assets/fix-halaman-depan.jpeg";
-import othersImg from "@/assets/Others.png";
-import chainLubricantsImg from "@/assets/Chain Lubrincant.png";
-import rustCleanerImg from "@/assets/Rust Cleaner.png";
-import coolantImg from "@/assets/Coolant.png";
-import h2sScavengerImg from "@/assets/H2S Scavenger.png";
+import othersImg from "@/assets/others.png";
+import chainLubricantsImg from "@/assets/chain_lubricants.png";
+import rustCleanerImg from "@/assets/rust_cleaner.png";
+import coolantImg from "@/assets/coolant.png";
+import h2sScavengerImg from "@/assets/h2s_scavenger.png";
 
 
 

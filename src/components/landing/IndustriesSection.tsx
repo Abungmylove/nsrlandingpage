@@ -4,7 +4,7 @@ import constructionImg from "@/assets/fix-construction-hero.png";
 import packagingImg from "@/assets/printing_packaging.png";
 import industrialCoatingImg from "@/assets/industrial_coating.png";
 import additivesImg from "@/assets/additives.jpg";
-import othersImg from "@/assets/Others.png";
+import othersImg from "@/assets/others.png";
 
 const topIndustries = [
   {
