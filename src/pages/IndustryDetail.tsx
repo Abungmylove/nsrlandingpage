@@ -8,15 +8,15 @@ import Footer from "@/components/landing/Footer";
 
 // Prepared images from user's 'gambar fix' folder
 import constructionHeroImg from "@/assets/fix-construction-hero.png";
-import decorativesWpImg from "@/assets/fix-decoratives-wp.png";
+import decorativesWpImg from "@/assets/fix-construction-hero.png";
 import floorCoatingImg from "@/assets/fix-floor-coating.png";
 
-import packagingImg from "@/assets/fix-printing-packaging.png";
+import packagingImg from "@/assets/printing_packaging.png";
 import inkImg from "@/assets/fix-ink.png";
 import opvImg from "@/assets/fix-opv.png";
 import functionalCoatingImg from "@/assets/fix-functional-coating.png";
 
-import industrialCoatingImg from "@/assets/fix-industrial-coating.png";
+import industrialCoatingImg from "@/assets/industrial_coating.png";
 import metalCoatingImg from "@/assets/fix-metal-coating.png";
 import woodCoatingImg from "@/assets/fix-wood-coating.png";
 import plasticCoatingImg from "@/assets/fix-plastic-coating.png";
@@ -26,6 +26,14 @@ import defoamerImg from "@/assets/fix-defoamer.png";
 import levelingImg from "@/assets/fix-leveling.png";
 import dispersingImg from "@/assets/fix-dispersing.png";
 import heroFrontImg from "@/assets/fix-halaman-depan.jpeg";
+import othersImg from "@/assets/Others.png";
+import chainLubricantsImg from "@/assets/Chain Lubrincant.png";
+import rustCleanerImg from "@/assets/Rust Cleaner.png";
+import coolantImg from "@/assets/Coolant.png";
+import h2sScavengerImg from "@/assets/H2S Scavenger.png";
+
+
+
 
 interface ConstructionSubCategory {
   title: string;
@@ -429,7 +437,7 @@ const othersData: {
   subCategories: [
     {
       title: "Chain Lubricants",
-      image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=800",
+      image: chainLubricantsImg,
       description: "High-performance synthetic chain oils and conveyor lubricants engineered for extreme temperature, high load, and wear protection.",
       productTypes: [
         {
@@ -458,7 +466,7 @@ const othersData: {
     },
     {
       title: "Rust Cleaners",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800",
+      image: rustCleanerImg,
       description: "Advanced chemical rust removers, descalers, and surface passivation agents designed to restore corroded metal parts safely.",
       productTypes: [
         {
@@ -487,7 +495,7 @@ const othersData: {
     },
     {
       title: "Radiator Coolant",
-      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800",
+      image: coolantImg,
       description: "Organic Acid Technology (OAT) radiator coolants and antifreeze concentrates providing superior heat transfer and corrosion protection.",
       productTypes: [
         {
@@ -516,7 +524,7 @@ const othersData: {
     },
     {
       title: "H2S Scavenger",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
+      image: h2sScavengerImg,
       description: "Fast-acting triazine and non-triazine Hydrogen Sulfide (H2S) scavengers designed for oilfield, gas processing, and wastewater treatment.",
       productTypes: [
         {
@@ -598,14 +606,14 @@ const IndustryDetail = () => {
           <img
             src={
               isConstruction
-                ? decorativesWpImg
+                ? constructionHeroImg
                 : isPackaging
                 ? packagingImg
                 : isIndustrial
                 ? industrialCoatingImg
                 : isAdditives
-                ? heroFrontImg
-                : heroFrontImg
+                ? additivesImg
+                : othersImg
             }
             alt={
               isConstruction

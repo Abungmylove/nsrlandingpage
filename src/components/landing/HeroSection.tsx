@@ -7,7 +7,7 @@ import {
 
 import { ArrowRight } from "lucide-react";
 
-import heroBg from "@/assets/fix-halaman-depan.jpeg";
+import heroBg from "@/assets/halaman_awal.png";
 import secondImg from "@/assets/bg4.png";
 
 const HeroSection = () => {

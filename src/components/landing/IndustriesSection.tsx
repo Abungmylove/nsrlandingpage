@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import constructionImg from "@/assets/fix-construction-hero.png";
-import packagingImg from "@/assets/fix-printing-packaging.png";
-import industrialCoatingImg from "@/assets/fix-industrial-coating.png";
+import packagingImg from "@/assets/printing_packaging.png";
+import industrialCoatingImg from "@/assets/industrial_coating.png";
 import additivesImg from "@/assets/additives.jpg";
+import othersImg from "@/assets/Others.png";
 
 const topIndustries = [
   {
@@ -32,7 +33,7 @@ const bottomIndustries = [
   {
     id: "others",
     title: "Others",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
+    image: othersImg,
   },
 ];
 
