@@ -8,7 +8,7 @@ import Footer from "@/components/landing/Footer";
 
 // Prepared images from user's 'gambar fix' folder
 import constructionHeroImg from "@/assets/fix-construction-hero.png";
-import decorativesWpImg from "@/assets/fix-construction-hero.png";
+import decorativesWpImg from "@/assets/fix-decoratives-wp.png";
 import floorCoatingImg from "@/assets/fix-floor-coating.png";
 
 import packagingImg from "@/assets/printing_packaging.png";
