@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import shivaImg from "@/assets/shiva.jpeg";
 import alkImg from "@/assets/alk.jpeg";
+import partner1Img from "@/assets/partners-1.jpeg";
+import partner2Img from "@/assets/partners-2.jpeg";
+import partner3Img from "@/assets/partners-3.jpeg";
+import partner4Img from "@/assets/partners-4.jpeg";
 
 const industries = [
   {
@@ -8,6 +12,18 @@ const industries = [
   },
   {
     image: alkImg,
+  },
+  {
+    image: partner1Img,
+  },
+  {
+    image: partner2Img,
+  },
+  {
+    image: partner3Img,
+  },
+  {
+    image: partner4Img,
   },
 ];
 
@@ -58,7 +74,8 @@ const IndustriesSection = () => {
           flex
           flex-wrap
           justify-center
-          gap-8
+          items-center
+          gap-10
           px-8"
       >
 
@@ -67,52 +84,15 @@ const IndustriesSection = () => {
             key={index}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.4 }}
-            className="
-              relative
-              overflow-hidden"
+            className="flex items-center justify-center w-44 h-24"
           >
-
-            {/* IMAGE */}
-            <div className="relative inline-block overflow-hidden">
-
-              <motion.img
-                src={ind.image}
-                
-                loading="lazy"
-                whileHover={{ scale: 1.08 }}
-                transition={{ duration: 0.6 }}
-                className="
-                  block
-                  w-auto
-                  h-auto
-                  max-w-full
-                "
-              />
-
-              {/* TITLE */}
-              <div
-                className="
-                  absolute
-                  bottom-0
-                  left-0
-                  p-6
-                "
-              >
-                <h3
-                  className="
-                    text-white
-                    text-2xl
-                    md:text-3xl
-                    font-bold
-                    drop-shadow-lg
-                  "
-                >
-                 
-                </h3>
-              </div>
-
-            </div>
-
+            <motion.img
+              src={ind.image}
+              loading="lazy"
+              whileHover={{ scale: 1.08 }}
+              transition={{ duration: 0.6 }}
+              className="w-full h-full object-contain"
+            />
           </motion.div>
         ))}
 

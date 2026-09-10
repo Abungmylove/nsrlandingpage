@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle2, ShieldCheck, Layers, Sparkles, Building2, ChevronDown, Printer, Wrench, Droplets, Settings } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Layers, Sparkles, Building2, Printer, Wrench, Droplets, Settings } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 
@@ -110,7 +110,24 @@ const constructionData: {
       title: "Floor Coating",
       image: floorCoatingImg,
       description: "Heavy-duty epoxy and polyurethane resin systems crafted for industrial durability, chemical protection, hygienic spaces, and seamless cleanroom flooring.",
-      productTypes: [],
+      productTypes: [
+        {
+          name: "Epoxy Resin Flooring Systems",
+          description: "Solvent-free 100% solids epoxy resin systems formulated for heavy-duty industrial and commercial floor coatings."
+        },
+        {
+          name: "Hygienic Polyurethane Screeds",
+          description: "High-performance polyurethane screed systems designed for extreme thermal shock, heavy impact, and chemical exposure."
+        },
+        {
+          name: "Self-Leveling Floor Compounds",
+          description: "Ultra-smooth self-leveling epoxy binder compounds engineered for dust-free cleanrooms, laboratories, and healthcare facilities."
+        },
+        {
+          name: "Aliphatic Protective Topcoats",
+          description: "Non-yellowing aliphatic polyurethane topcoats offering exceptional UV stability, scratch resistance, and gloss retention."
+        }
+      ],
       keyProducts: [
         {
           name: "AlkiFloor EP-200",
@@ -573,13 +590,6 @@ const IndustryDetail = () => {
   const isAdditives = industryId === "additives";
   const isOthers = industryId === "others";
 
-  const scrollToKeyProducts = (prefix: string, index: number) => {
-    const targetElement = document.getElementById(`${prefix}-key-products-${index}`);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   if (!isConstruction && !isPackaging && !isIndustrial && !isAdditives && !isOthers) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-900">
@@ -705,7 +715,7 @@ const IndustryDetail = () => {
                 Construction Solutions
               </h2>
               <p className="text-slate-600 mt-2">
-                Explore our specialized product categories below. Click on any top card to scroll directly to its key products.
+                Explore our specialized product categories below.
               </p>
             </div>
 
@@ -719,8 +729,7 @@ const IndustryDetail = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  onClick={() => scrollToKeyProducts("const", 0)}
-                  className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-500 shadow-xl hover:shadow-2xl flex flex-col cursor-pointer transition-all duration-300"
+                  className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 shadow-xl flex flex-col transition-all duration-300"
                 >
                   <div className="relative h-[260px] overflow-hidden">
                     <img
@@ -739,9 +748,6 @@ const IndustryDetail = () => {
                           {decSub.title}
                         </h3>
                       </div>
-                      <div className="p-2.5 bg-blue-600/90 text-white rounded-full opacity-80 group-hover:opacity-100 group-hover:translate-y-1 transition-all shadow-lg">
-                        <ChevronDown size={20} />
-                      </div>
                     </div>
                   </div>
 
@@ -750,26 +756,23 @@ const IndustryDetail = () => {
                       {decSub.description}
                     </p>
 
-                    <div className="flex items-center justify-between text-blue-600 font-semibold text-sm pt-2 border-t border-slate-200/60">
+                    <div className="flex items-center text-blue-600 font-semibold text-sm pt-2 border-t border-slate-200/60">
                       <div className="flex items-center gap-2">
                         <Sparkles size={16} />
                         <span>High Durability & Certified</span>
                       </div>
-                      <span className="text-xs bg-blue-50 px-3 py-1 rounded-full text-blue-700 font-bold border border-blue-200 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                        View Products ↓
-                      </span>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* APPLICATION / PRODUCT TYPES */}
+                {/* PRODUCT TYPES */}
                 <div className="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 md:p-8 shadow-sm">
                   <div className="flex items-center gap-3 mb-6 border-b border-slate-200 pb-4">
                     <div className="p-2.5 bg-blue-600 text-white rounded-xl shadow-md">
                       <Layers size={22} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900">Application & Product Types</h3>
+                      <h3 className="text-xl font-bold text-slate-900">Product Types</h3>
                       <p className="text-xs text-slate-500">{decSub.title}</p>
                     </div>
                   </div>
@@ -798,53 +801,6 @@ const IndustryDetail = () => {
                   </div>
                 </div>
 
-                {/* KEY PRODUCTS */}
-                <div id="const-key-products-0" className="space-y-6 scroll-mt-28">
-                  <div className="flex items-center gap-3 border-b border-slate-200 pb-3">
-                    <div className="p-2 bg-blue-600 text-white rounded-lg shadow">
-                      <ShieldCheck size={20} />
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900">
-                      Key Products: <span className="text-blue-600">{decSub.title}</span>
-                    </h3>
-                  </div>
-
-                  <div className="space-y-4">
-                    {decSub.keyProducts.map((prod) => (
-                      <div
-                        key={prod.code}
-                        className="bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-6 transition-all duration-300 shadow-md hover:shadow-lg flex flex-col justify-between"
-                      >
-                        <div>
-                          <div className="flex justify-between items-start mb-2">
-                            <h4 className="text-lg font-bold text-slate-900">{prod.name}</h4>
-                            <span className="px-2.5 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-bold rounded-md">
-                              {prod.code}
-                            </span>
-                          </div>
-                          <p className="text-slate-600 text-xs mb-4 leading-relaxed">
-                            {prod.description}
-                          </p>
-                        </div>
-
-                        <div className="pt-3 border-t border-slate-100">
-                          <h5 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
-                            Key Features:
-                          </h5>
-                          <ul className="space-y-1.5">
-                            {prod.features.map((feat, fIdx) => (
-                              <li key={fIdx} className="flex items-center gap-2 text-xs text-slate-700">
-                                <CheckCircle2 size={13} className="text-blue-600 shrink-0" />
-                                <span>{feat}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
               </div>
 
               {/* RIGHT COLUMN: FLOOR COATING */}
@@ -854,8 +810,7 @@ const IndustryDetail = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.15 }}
-                  onClick={() => scrollToKeyProducts("const", 1)}
-                  className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-500 shadow-xl hover:shadow-2xl flex flex-col cursor-pointer transition-all duration-300"
+                  className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 shadow-xl flex flex-col transition-all duration-300"
                 >
                   <div className="relative h-[260px] overflow-hidden">
                     <img
@@ -874,9 +829,6 @@ const IndustryDetail = () => {
                           {floorSub.title}
                         </h3>
                       </div>
-                      <div className="p-2.5 bg-blue-600/90 text-white rounded-full opacity-80 group-hover:opacity-100 group-hover:translate-y-1 transition-all shadow-lg">
-                        <ChevronDown size={20} />
-                      </div>
                     </div>
                   </div>
 
@@ -885,61 +837,47 @@ const IndustryDetail = () => {
                       {floorSub.description}
                     </p>
 
-                    <div className="flex items-center justify-between text-blue-600 font-semibold text-sm pt-2 border-t border-slate-200/60">
+                    <div className="flex items-center text-blue-600 font-semibold text-sm pt-2 border-t border-slate-200/60">
                       <div className="flex items-center gap-2">
                         <Sparkles size={16} />
                         <span>High Durability & Certified</span>
                       </div>
-                      <span className="text-xs bg-blue-50 px-3 py-1 rounded-full text-blue-700 font-bold border border-blue-200 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                        View Products ↓
-                      </span>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* NO APPLICATION / PRODUCT TYPES FOR FLOOR COATING */}
-                <div id="const-key-products-1" className="space-y-6 scroll-mt-28 pt-2">
-                  <div className="flex items-center gap-3 border-b border-slate-200 pb-3">
-                    <div className="p-2 bg-blue-600 text-white rounded-lg shadow">
-                      <ShieldCheck size={20} />
+                {/* PRODUCT TYPES */}
+                <div className="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 md:p-8 shadow-sm">
+                  <div className="flex items-center gap-3 mb-6 border-b border-slate-200 pb-4">
+                    <div className="p-2.5 bg-blue-600 text-white rounded-xl shadow-md">
+                      <Layers size={22} />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">
-                      Key Products: <span className="text-blue-600">{floorSub.title}</span>
-                    </h3>
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900">Product Types</h3>
+                      <p className="text-xs text-slate-500">{floorSub.title}</p>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
-                    {floorSub.keyProducts.map((prod) => (
-                      <div
-                        key={prod.code}
-                        className="bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-6 transition-all duration-300 shadow-md hover:shadow-lg flex flex-col justify-between"
+                    {floorSub.productTypes.map((pt, i) => (
+                      <motion.div
+                        key={pt.name}
+                        variants={itemAnim}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-500/50 shadow-sm transition-all"
                       >
-                        <div>
-                          <div className="flex justify-between items-start mb-2">
-                            <h4 className="text-lg font-bold text-slate-900">{prod.name}</h4>
-                            <span className="px-2.5 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-bold rounded-md">
-                              {prod.code}
-                            </span>
+                        <div className="flex items-start gap-3">
+                          <span className="w-7 h-7 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center text-xs shrink-0 border border-blue-200 mt-0.5">
+                            {i + 1}
+                          </span>
+                          <div>
+                            <h4 className="text-base font-bold text-slate-900 mb-1">{pt.name}</h4>
+                            <p className="text-slate-600 text-xs leading-relaxed">{pt.description}</p>
                           </div>
-                          <p className="text-slate-600 text-xs mb-4 leading-relaxed">
-                            {prod.description}
-                          </p>
                         </div>
-
-                        <div className="pt-3 border-t border-slate-100">
-                          <h5 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
-                            Key Features:
-                          </h5>
-                          <ul className="space-y-1.5">
-                            {prod.features.map((feat, fIdx) => (
-                              <li key={fIdx} className="flex items-center gap-2 text-xs text-slate-700">
-                                <CheckCircle2 size={13} className="text-blue-600 shrink-0" />
-                                <span>{feat}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -983,7 +921,7 @@ const IndustryDetail = () => {
                 Printing & Packaging Solutions
               </h2>
               <p className="text-slate-600 mt-2">
-                Explore our 3 core sectors below. Click on any top card to scroll directly to its key products.
+                Explore our 3 core sectors below.
               </p>
             </div>
 
@@ -998,8 +936,7 @@ const IndustryDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.15 }}
-                    onClick={() => scrollToKeyProducts("pkg", idx)}
-                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-500 shadow-xl hover:shadow-2xl flex flex-col cursor-pointer transition-all duration-300"
+                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 shadow-xl flex flex-col transition-all duration-300"
                   >
                     <div className="relative h-[240px] overflow-hidden">
                       <img
@@ -1018,9 +955,6 @@ const IndustryDetail = () => {
                             {sub.title}
                           </h3>
                         </div>
-                        <div className="p-2 bg-blue-600/90 text-white rounded-full opacity-80 group-hover:opacity-100 group-hover:translate-y-1 transition-all shadow-lg">
-                          <ChevronDown size={18} />
-                        </div>
                       </div>
                     </div>
 
@@ -1029,26 +963,23 @@ const IndustryDetail = () => {
                         {sub.description}
                       </p>
 
-                      <div className="flex items-center justify-between text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
+                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
                         <div className="flex items-center gap-1.5">
                           <Sparkles size={14} />
                           <span>High Quality Finish</span>
                         </div>
-                        <span className="text-xs bg-blue-50 px-2.5 py-1 rounded-full text-blue-700 font-bold border border-blue-200 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          View Products ↓
-                        </span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* APPLICATION / PRODUCT TYPES */}
+                  {/* PRODUCT TYPES */}
                   <div className="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-5 border-b border-slate-200 pb-3">
                       <div className="p-2 bg-blue-600 text-white rounded-xl shadow-md">
                         <Layers size={20} />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900">Application & Product Types</h3>
+                        <h3 className="text-lg font-bold text-slate-900">Product Types</h3>
                         <p className="text-xs text-slate-500">{sub.title}</p>
                       </div>
                     </div>
@@ -1077,52 +1008,7 @@ const IndustryDetail = () => {
                     </div>
                   </div>
 
-                  {/* KEY PRODUCTS */}
-                  <div id={`pkg-key-products-${idx}`} className="space-y-5 scroll-mt-28">
-                    <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
-                      <div className="p-2 bg-blue-600 text-white rounded-lg shadow">
-                        <ShieldCheck size={18} />
-                      </div>
-                      <h3 className="text-lg font-bold text-slate-900">
-                        Key Products: <span className="text-blue-600">{sub.title}</span>
-                      </h3>
-                    </div>
 
-                    <div className="space-y-4">
-                      {sub.keyProducts.map((prod) => (
-                        <div
-                          key={prod.code}
-                          className="bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 transition-all duration-300 shadow-md hover:shadow-lg flex flex-col justify-between"
-                        >
-                          <div>
-                            <div className="flex justify-between items-start mb-2">
-                              <h4 className="text-base font-bold text-slate-900">{prod.name}</h4>
-                              <span className="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-bold rounded-md">
-                                {prod.code}
-                              </span>
-                            </div>
-                            <p className="text-slate-600 text-xs mb-3 leading-relaxed">
-                              {prod.description}
-                            </p>
-                          </div>
-
-                          <div className="pt-3 border-t border-slate-100">
-                            <h5 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
-                              Key Features:
-                            </h5>
-                            <ul className="space-y-1">
-                              {prod.features.map((feat, fIdx) => (
-                                <li key={fIdx} className="flex items-center gap-2 text-xs text-slate-700">
-                                  <CheckCircle2 size={13} className="text-blue-600 shrink-0" />
-                                  <span>{feat}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
                 </div>
               ))}
@@ -1163,7 +1049,7 @@ const IndustryDetail = () => {
                 Industrial Coating Solutions
               </h2>
               <p className="text-slate-600 mt-2">
-                Explore our 3 core industrial sectors below. Click on any top card to scroll directly to its key products.
+                Explore our 3 core industrial sectors below.
               </p>
             </div>
 
@@ -1178,8 +1064,7 @@ const IndustryDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.15 }}
-                    onClick={() => scrollToKeyProducts("ind", idx)}
-                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-500 shadow-xl hover:shadow-2xl flex flex-col cursor-pointer transition-all duration-300"
+                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 shadow-xl flex flex-col transition-all duration-300"
                   >
                     <div className="relative h-[240px] overflow-hidden">
                       <img
@@ -1198,9 +1083,6 @@ const IndustryDetail = () => {
                             {sub.title}
                           </h3>
                         </div>
-                        <div className="p-2 bg-blue-600/90 text-white rounded-full opacity-80 group-hover:opacity-100 group-hover:translate-y-1 transition-all shadow-lg">
-                          <ChevronDown size={18} />
-                        </div>
                       </div>
                     </div>
 
@@ -1209,26 +1091,23 @@ const IndustryDetail = () => {
                         {sub.description}
                       </p>
 
-                      <div className="flex items-center justify-between text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
+                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
                         <div className="flex items-center gap-1.5">
                           <Sparkles size={14} />
                           <span>Industrial Grade Protection</span>
                         </div>
-                        <span className="text-xs bg-blue-50 px-2.5 py-1 rounded-full text-blue-700 font-bold border border-blue-200 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          View Products ↓
-                        </span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* APPLICATION / PRODUCT TYPES */}
+                  {/* PRODUCT TYPES */}
                   <div className="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-5 border-b border-slate-200 pb-3">
                       <div className="p-2 bg-blue-600 text-white rounded-xl shadow-md">
                         <Layers size={20} />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900">Application & Product Types</h3>
+                        <h3 className="text-lg font-bold text-slate-900">Product Types</h3>
                         <p className="text-xs text-slate-500">{sub.title}</p>
                       </div>
                     </div>
@@ -1257,52 +1136,7 @@ const IndustryDetail = () => {
                     </div>
                   </div>
 
-                  {/* KEY PRODUCTS */}
-                  <div id={`ind-key-products-${idx}`} className="space-y-5 scroll-mt-28">
-                    <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
-                      <div className="p-2 bg-blue-600 text-white rounded-lg shadow">
-                        <ShieldCheck size={18} />
-                      </div>
-                      <h3 className="text-lg font-bold text-slate-900">
-                        Key Products: <span className="text-blue-600">{sub.title}</span>
-                      </h3>
-                    </div>
 
-                    <div className="space-y-4">
-                      {sub.keyProducts.map((prod) => (
-                        <div
-                          key={prod.code}
-                          className="bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 transition-all duration-300 shadow-md hover:shadow-lg flex flex-col justify-between"
-                        >
-                          <div>
-                            <div className="flex justify-between items-start mb-2">
-                              <h4 className="text-base font-bold text-slate-900">{prod.name}</h4>
-                              <span className="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-bold rounded-md">
-                                {prod.code}
-                              </span>
-                            </div>
-                            <p className="text-slate-600 text-xs mb-3 leading-relaxed">
-                              {prod.description}
-                            </p>
-                          </div>
-
-                          <div className="pt-3 border-t border-slate-100">
-                            <h5 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
-                              Key Features:
-                            </h5>
-                            <ul className="space-y-1">
-                              {prod.features.map((feat, fIdx) => (
-                                <li key={fIdx} className="flex items-center gap-2 text-xs text-slate-700">
-                                  <CheckCircle2 size={13} className="text-blue-600 shrink-0" />
-                                  <span>{feat}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
                 </div>
               ))}
@@ -1343,7 +1177,7 @@ const IndustryDetail = () => {
                 Additive Solutions
               </h2>
               <p className="text-slate-600 mt-2">
-                Explore our 3 core chemical additive sectors below. Click on any top card to scroll directly to its key products.
+                Explore our 3 core chemical additive sectors below.
               </p>
             </div>
 
@@ -1358,8 +1192,7 @@ const IndustryDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.15 }}
-                    onClick={() => scrollToKeyProducts("add", idx)}
-                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-500 shadow-xl hover:shadow-2xl flex flex-col cursor-pointer transition-all duration-300"
+                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 shadow-xl flex flex-col transition-all duration-300"
                   >
                     <div className="relative h-[240px] overflow-hidden">
                       <img
@@ -1378,9 +1211,6 @@ const IndustryDetail = () => {
                             {sub.title}
                           </h3>
                         </div>
-                        <div className="p-2 bg-blue-600/90 text-white rounded-full opacity-80 group-hover:opacity-100 group-hover:translate-y-1 transition-all shadow-lg">
-                          <ChevronDown size={18} />
-                        </div>
                       </div>
                     </div>
 
@@ -1389,26 +1219,23 @@ const IndustryDetail = () => {
                         {sub.description}
                       </p>
 
-                      <div className="flex items-center justify-between text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
+                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
                         <div className="flex items-center gap-1.5">
                           <Sparkles size={14} />
                           <span>High Efficiency Formulations</span>
                         </div>
-                        <span className="text-xs bg-blue-50 px-2.5 py-1 rounded-full text-blue-700 font-bold border border-blue-200 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          View Products ↓
-                        </span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* APPLICATION / PRODUCT TYPES */}
+                  {/* PRODUCT TYPES */}
                   <div className="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-5 border-b border-slate-200 pb-3">
                       <div className="p-2 bg-blue-600 text-white rounded-xl shadow-md">
                         <Layers size={20} />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900">Application & Product Types</h3>
+                        <h3 className="text-lg font-bold text-slate-900">Product Types</h3>
                         <p className="text-xs text-slate-500">{sub.title}</p>
                       </div>
                     </div>
@@ -1437,52 +1264,7 @@ const IndustryDetail = () => {
                     </div>
                   </div>
 
-                  {/* KEY PRODUCTS */}
-                  <div id={`add-key-products-${idx}`} className="space-y-5 scroll-mt-28">
-                    <div className="flex items-center gap-2.5 border-b border-slate-200 pb-3">
-                      <div className="p-2 bg-blue-600 text-white rounded-lg shadow">
-                        <ShieldCheck size={18} />
-                      </div>
-                      <h3 className="text-lg font-bold text-slate-900">
-                        Key Products: <span className="text-blue-600">{sub.title}</span>
-                      </h3>
-                    </div>
 
-                    <div className="space-y-4">
-                      {sub.keyProducts.map((prod) => (
-                        <div
-                          key={prod.code}
-                          className="bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 transition-all duration-300 shadow-md hover:shadow-lg flex flex-col justify-between"
-                        >
-                          <div>
-                            <div className="flex justify-between items-start mb-2">
-                              <h4 className="text-base font-bold text-slate-900">{prod.name}</h4>
-                              <span className="px-2 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-bold rounded-md">
-                                {prod.code}
-                              </span>
-                            </div>
-                            <p className="text-slate-600 text-xs mb-3 leading-relaxed">
-                              {prod.description}
-                            </p>
-                          </div>
-
-                          <div className="pt-3 border-t border-slate-100">
-                            <h5 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
-                              Key Features:
-                            </h5>
-                            <ul className="space-y-1">
-                              {prod.features.map((feat, fIdx) => (
-                                <li key={fIdx} className="flex items-center gap-2 text-xs text-slate-700">
-                                  <CheckCircle2 size={13} className="text-blue-600 shrink-0" />
-                                  <span>{feat}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
                 </div>
               ))}
@@ -1523,7 +1305,7 @@ const IndustryDetail = () => {
                 Specialty Chemical Solutions
               </h2>
               <p className="text-slate-600 mt-2">
-                Explore our 4 specialty chemical product lines below. Click on any top card to scroll directly to its key products.
+                Explore our 4 specialty chemical product lines below.
               </p>
             </div>
 
@@ -1538,8 +1320,7 @@ const IndustryDetail = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    onClick={() => scrollToKeyProducts("oth", idx)}
-                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-500 shadow-xl hover:shadow-2xl flex flex-col cursor-pointer transition-all duration-300"
+                    className="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 shadow-xl flex flex-col transition-all duration-300"
                   >
                     <div className="relative h-[220px] overflow-hidden">
                       <img
@@ -1558,9 +1339,6 @@ const IndustryDetail = () => {
                             {sub.title}
                           </h3>
                         </div>
-                        <div className="p-1.5 bg-blue-600/90 text-white rounded-full opacity-80 group-hover:opacity-100 group-hover:translate-y-1 transition-all shadow-lg shrink-0">
-                          <ChevronDown size={16} />
-                        </div>
                       </div>
                     </div>
 
@@ -1569,26 +1347,23 @@ const IndustryDetail = () => {
                         {sub.description}
                       </p>
 
-                      <div className="flex items-center justify-between text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
+                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
                         <div className="flex items-center gap-1">
                           <Sparkles size={13} />
                           <span>Specialty Grade</span>
                         </div>
-                        <span className="text-[11px] bg-blue-50 px-2 py-0.5 rounded-full text-blue-700 font-bold border border-blue-200 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          View Products ↓
-                        </span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* APPLICATION / PRODUCT TYPES */}
+                  {/* PRODUCT TYPES */}
                   <div className="bg-slate-50 border border-slate-200/80 rounded-3xl p-5 shadow-sm">
                     <div className="flex items-center gap-2.5 mb-4 border-b border-slate-200 pb-2.5">
                       <div className="p-1.5 bg-blue-600 text-white rounded-lg shadow-md">
                         <Layers size={18} />
                       </div>
                       <div>
-                        <h3 className="text-base font-bold text-slate-900">Application Types</h3>
+                        <h3 className="text-base font-bold text-slate-900">Product Types</h3>
                         <p className="text-[11px] text-slate-500">{sub.title}</p>
                       </div>
                     </div>
@@ -1617,52 +1392,7 @@ const IndustryDetail = () => {
                     </div>
                   </div>
 
-                  {/* KEY PRODUCTS */}
-                  <div id={`oth-key-products-${idx}`} className="space-y-4 scroll-mt-28">
-                    <div className="flex items-center gap-2 border-b border-slate-200 pb-2.5">
-                      <div className="p-1.5 bg-blue-600 text-white rounded-lg shadow">
-                        <ShieldCheck size={16} />
-                      </div>
-                      <h3 className="text-base font-bold text-slate-900">
-                        Key Products: <span className="text-blue-600">{sub.title}</span>
-                      </h3>
-                    </div>
 
-                    <div className="space-y-3.5">
-                      {sub.keyProducts.map((prod) => (
-                        <div
-                          key={prod.code}
-                          className="bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-4 transition-all duration-300 shadow-md hover:shadow-lg flex flex-col justify-between"
-                        >
-                          <div>
-                            <div className="flex justify-between items-start mb-1.5">
-                              <h4 className="text-sm font-bold text-slate-900">{prod.name}</h4>
-                              <span className="px-1.5 py-0.5 bg-blue-50 text-blue-700 border border-blue-200 text-[10px] font-mono font-bold rounded">
-                                {prod.code}
-                              </span>
-                            </div>
-                            <p className="text-slate-600 text-[11px] mb-2.5 leading-relaxed">
-                              {prod.description}
-                            </p>
-                          </div>
-
-                          <div className="pt-2 border-t border-slate-100">
-                            <h5 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">
-                              Key Features:
-                            </h5>
-                            <ul className="space-y-1">
-                              {prod.features.map((feat, fIdx) => (
-                                <li key={fIdx} className="flex items-center gap-1.5 text-[11px] text-slate-700">
-                                  <CheckCircle2 size={12} className="text-blue-600 shrink-0" />
-                                  <span>{feat}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
                 </div>
               ))}
