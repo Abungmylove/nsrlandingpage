@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import constructionImg from "@/assets/fix-construction-hero.png";
 import packagingImg from "@/assets/printing_packaging.png";
-import industrialCoatingImg from "@/assets/industrial_coating.png";
+import industrialCoatingImg from "@/assets/fix-industrial-coating.jpeg";
 import additivesImg from "@/assets/additives.jpg";
 import othersImg from "@/assets/others.png";
 

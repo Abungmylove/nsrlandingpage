@@ -16,7 +16,7 @@ import inkImg from "@/assets/fix-ink.png";
 import opvImg from "@/assets/fix-opv.png";
 import functionalCoatingImg from "@/assets/fix-functional-coating.png";
 
-import industrialCoatingImg from "@/assets/industrial_coating.png";
+import industrialCoatingImg from "@/assets/fix-industrial-coating.jpeg";
 import metalCoatingImg from "@/assets/fix-metal-coating.png";
 import woodCoatingImg from "@/assets/fix-wood-coating.png";
 import plasticCoatingImg from "@/assets/fix-plastic-coating.png";
