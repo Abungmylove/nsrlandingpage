@@ -118,7 +118,7 @@ const HeroSection = () => {
             "
           >
             High Quality <br />
-            <span className="text-blue-600">
+            <span className="text-[#0000EE]">
               Coatings & <br /> Additives
             </span>
             <br />
