@@ -62,22 +62,11 @@ const constructionData: {
       image: decorativesWpImg,
       description: "Advanced acrylic emulsions, elastomeric binders, and water-repellent polymers engineered for premium wall finishes and structural waterproofing protection.",
       productTypes: [
-        {
-          name: "Exterior & Interior Wall Emulsion Binders",
-          description: "Pure acrylic and styrene-acrylic emulsion polymers providing superior scrub resistance, weatherability, UV resistance, and excellent pigment binding capacity."
-        },
-        {
-          name: "Elastomeric Waterproofing Membranes",
-          description: "High-flexibility polymer emulsions designed to bridge structural micro-cracks, prevent water ingress, and withstand harsh outdoor environmental conditions."
-        },
-        {
-          name: "Tile Adhesive & Grout Polymer Modifiers",
-          description: "Specialized polymers and redispersible powders that significantly improve bond strength, flexural rigidity, and water resistance in tile adhesives and grouts."
-        },
-        {
-          name: "Alkali-Resistant Primers & Wall Sealers",
-          description: "Deep-penetrating acrylic primers formulated to bind powdery masonry substrates, block efflorescence, and prepare surfaces for long-lasting topcoats."
-        }
+        { name: "Styrene Acrylic Emulsion" },
+        { name: "Pure-Acrylic Emulsion" },
+        { name: "Self-Crosslink Acrylic Emulsion" },
+        { name: "Styrene Acrylic Emulsion for 1K Water Proofing" },
+        { name: "Styrene Acrylic Emulsion for 2K Cementitious Water Proofing" }
       ],
       keyProducts: [
         {
@@ -169,14 +158,9 @@ const packagingData: {
       image: inkImg,
       description: "High-performance pigment dispersions, flexographic inks, and gravure binders formulated for vivid color intensity and excellent substrate adhesion.",
       productTypes: [
-        {
-          name: "Flexographic & Gravure Ink Resins",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. High pigment binding capacity and fast drying performance."
-        },
-        {
-          name: "Water-Based Ink Dispersions",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eco-friendly formulations for paper and cardboard packaging."
-        }
+        { name: "Film-forming Acrylic Emulsion" },
+        { name: "Non-film Forming Acrylic Emulsion" },
+        { name: "Solid Acrylic Resin" }
       ],
       keyProducts: [
         {
@@ -198,14 +182,9 @@ const packagingData: {
       image: opvImg,
       description: "Water-based and UV-curable overprint varnishes providing extreme gloss, scuff resistance, and protective finishing for printed packaging.",
       productTypes: [
-        {
-          name: "Water-Based Gloss & Matte OPV",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Smooth surface protection with high scuff resistance."
-        },
-        {
-          name: "UV-Curable High Gloss OPV",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Instant curing varnish delivering brilliant high-gloss finishes."
-        }
+        { name: "Film-forming Acrylic Emulsion" },
+        { name: "Non-film Forming Acrylic Emulsion" },
+        { name: "Solid Acrylic Resin" }
       ],
       keyProducts: [
         {
@@ -226,16 +205,7 @@ const packagingData: {
       title: "Functional Coating",
       image: functionalCoatingImg,
       description: "Specialized barrier coatings, heat-seal lacquers, and moisture/grease resistant solutions engineered for food-grade flexible packaging.",
-      productTypes: [
-        {
-          name: "Moisture & Grease Barrier Resins",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. High-barrier coating for sustainable paper packaging."
-        },
-        {
-          name: "Heat-Sealable Lacquers & Binders",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Strong peel-strength sealing resins for foils and films."
-        }
-      ],
+      productTypes: [],
       keyProducts: [
         {
           name: "AlkiSeal Barrier-G20",
@@ -265,14 +235,7 @@ const industrialCoatingData: {
       image: metalCoatingImg,
       description: "Advanced anti-corrosion primers, protective topcoats, and direct-to-metal (DTM) resin systems for structural steel, machinery, and automotive components.",
       productTypes: [
-        {
-          name: "Anti-Corrosion Primers & Zinc Rich Systems",
-          description: "High-protection epoxy and alkyd primers blocking oxidation and rust in harsh coastal or industrial environments."
-        },
-        {
-          name: "High-Performance Polyurethane Topcoats",
-          description: "UV-stable, chemical-resistant finishes providing glossy aesthetic appeal and long-lasting mechanical protection."
-        }
+        { name: "Acrylic Emulsion" }
       ],
       keyProducts: [
         {
@@ -294,14 +257,8 @@ const industrialCoatingData: {
       image: woodCoatingImg,
       description: "Clear and pigmented polyurethane, nitrocellulose, and UV-curable finishes designed to protect and enhance the natural beauty of wood & furniture.",
       productTypes: [
-        {
-          name: "Clear Polyurethane Wood Finishes",
-          description: "High-clarity wood sealers and topcoats offering water tightness, scratch resistance, and natural grain highlighting."
-        },
-        {
-          name: "UV-Curable & Waterborne Wood Coatings",
-          description: "Eco-friendly, fast-curing coatings engineered for mass furniture manufacturing and architectural woodwork."
-        }
+        { name: "Acrylic Emulsion" },
+        { name: "Self-crosslink Acrylic Emulsion" }
       ],
       keyProducts: [
         {
@@ -322,16 +279,7 @@ const industrialCoatingData: {
       title: "Plastic Coating",
       image: plasticCoatingImg,
       description: "UV-curable hardcoats, soft-touch coatings, and adhesion promoters for consumer electronics, automotive interiors, and plastic enclosures.",
-      productTypes: [
-        {
-          name: "UV-Curable Anti-Scratch Hardcoats",
-          description: "Ultra-hard clear coatings protecting polycarbonate, ABS, and acrylic plastics from scratching and chemicals."
-        },
-        {
-          name: "Soft-Touch & Rubberized Resins",
-          description: "Tactile coating formulations providing luxurious feel and matte appearance for electronic devices and interiors."
-        }
-      ],
+      productTypes: [],
       keyProducts: [
         {
           name: "AlkiCoat Plastic-UV",
@@ -360,16 +308,7 @@ const additivesData: {
       title: "Defoamer",
       image: defoamerImg,
       description: "High-efficiency non-silicone and mineral-oil defoaming agents designed to eliminate micro-foam, macro-bubbles, and air entrapment during formulation and application.",
-      productTypes: [
-        {
-          name: "Non-Silicone Air Release Agents",
-          description: "Specialized defoamers preventing micro-foam formation in water-based coatings and industrial inks."
-        },
-        {
-          name: "Mineral Oil & Polymer Defoamers",
-          description: "Fast-acting foam knock-down additives for high-shear manufacturing processes and architectural paints."
-        }
-      ],
+      productTypes: [],
       keyProducts: [
         {
           name: "AlkiDefoam Air-Zero",
@@ -389,16 +328,7 @@ const additivesData: {
       title: "Leveling",
       image: levelingImg,
       description: "Surface wetting, leveling, and flow control additives formulated to prevent orange peel, cratering, and surface defects while enhancing gloss.",
-      productTypes: [
-        {
-          name: "Polyether-Modified Siloxane Leveling Agents",
-          description: "Powerful surface tension reducing additives providing smooth film formation and anti-cratering."
-        },
-        {
-          name: "Acrylic Flow & Leveling Modifiers",
-          description: "Silicone-free leveling resins enhancing film clarity, recoatability, and surface smoothness."
-        }
-      ],
+      productTypes: [],
       keyProducts: [
         {
           name: "AlkiFlow Level-90",
@@ -418,16 +348,7 @@ const additivesData: {
       title: "Dispersing",
       image: dispersingImg,
       description: "Polymeric dispersants and wetting agents engineered for maximum pigment stabilization, viscosity reduction, and intense color development.",
-      productTypes: [
-        {
-          name: "High-Molecular Weight Polymeric Dispersants",
-          description: "Steric stabilization additives for organic and inorganic pigments in solvent and waterborne systems."
-        },
-        {
-          name: "Wetting & Colorant Stabilization Resins",
-          description: "Synergistic wetting agents reducing grinding time and preventing pigment flocculation."
-        }
-      ],
+      productTypes: [],
       keyProducts: [
         {
           name: "AlkiAdd Disperse-10",
