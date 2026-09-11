@@ -793,7 +793,6 @@ const IndustryDetail = () => {
                           </span>
                           <div>
                             <h4 className="text-base font-bold text-slate-900 mb-1">{pt.name}</h4>
-                            <p className="text-slate-600 text-xs leading-relaxed">{pt.description}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -874,7 +873,6 @@ const IndustryDetail = () => {
                           </span>
                           <div>
                             <h4 className="text-base font-bold text-slate-900 mb-1">{pt.name}</h4>
-                            <p className="text-slate-600 text-xs leading-relaxed">{pt.description}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -1000,7 +998,6 @@ const IndustryDetail = () => {
                             </span>
                             <div>
                               <h4 className="text-sm font-bold text-slate-900 mb-1">{pt.name}</h4>
-                              <p className="text-slate-600 text-xs leading-relaxed">{pt.description}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1128,7 +1125,6 @@ const IndustryDetail = () => {
                             </span>
                             <div>
                               <h4 className="text-sm font-bold text-slate-900 mb-1">{pt.name}</h4>
-                              <p className="text-slate-600 text-xs leading-relaxed">{pt.description}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1256,7 +1252,6 @@ const IndustryDetail = () => {
                             </span>
                             <div>
                               <h4 className="text-sm font-bold text-slate-900 mb-1">{pt.name}</h4>
-                              <p className="text-slate-600 text-xs leading-relaxed">{pt.description}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1384,7 +1379,6 @@ const IndustryDetail = () => {
                             </span>
                             <div>
                               <h4 className="text-xs font-bold text-slate-900 mb-0.5">{pt.name}</h4>
-                              <p className="text-slate-600 text-[11px] leading-relaxed">{pt.description}</p>
                             </div>
                           </div>
                         </motion.div>
