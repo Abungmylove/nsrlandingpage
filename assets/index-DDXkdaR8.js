@@ -222,7 +222,7 @@ Error generating stack: `+s.message+`
               md:leading-[1.1]
               tracking-tight
               text-slate-900
-            `,children:["High Quality ",h.jsx("br",{}),h.jsxs("span",{className:"text-blue-600",children:["Coatings & ",h.jsx("br",{})," Additives"]}),h.jsx("br",{}),"Solutions for ",h.jsx("br",{}),"Industry"]})})})]})},dD=()=>h.jsx("section",{id:"about",className:"py-28 bg-white overflow-hidden",children:h.jsx("div",{className:"container mx-auto px-6",children:h.jsxs(ie.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0},transition:{duration:.7},className:"max-w-4xl mx-auto text-center",children:[h.jsx("span",{className:`\r
+            `,children:["High Quality ",h.jsx("br",{}),h.jsxs("span",{className:"text-[#0000EE]",children:["Coatings & ",h.jsx("br",{})," Additives"]}),h.jsx("br",{}),"Solutions for ",h.jsx("br",{}),"Industry"]})})})]})},dD=()=>h.jsx("section",{id:"about",className:"py-28 bg-white overflow-hidden",children:h.jsx("div",{className:"container mx-auto px-6",children:h.jsxs(ie.div,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0},transition:{duration:.7},className:"max-w-4xl mx-auto text-center",children:[h.jsx("span",{className:`\r
               inline-block\r
               text-sm\r
               font-semibold\r
