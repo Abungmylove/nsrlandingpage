@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
@@ -61,16 +61,8 @@ const ContactSection = () => {
     const target = e.target as HTMLFormElement;
     const data = new FormData(target);
 
-    const fullName = data.get("fullName");
-    const company = data.get("company");
     const email = data.get("email") as string;
-    const phone = data.get("phone") || "-";
-    const message = data.get("message");
-    const interests = selectedInterests.length > 0 ? selectedInterests.join(", ") : "-";
     
-    // Internal routing target (Rahasia Dapur / Hidden from UI)
-    const destinationEmail = region === "Domestic" ? "admin@alkindo.com" : "admin@novasindo.com";
-
     // VALIDASI EMAIL BISNIS
     if (!isBusinessEmail(email)) {
       setLoading(false);
@@ -82,24 +74,11 @@ const ContactSection = () => {
       return;
     }
 
-    // NOMOR WA
-    const nomorWA = "6285123901305";
-
-    const teksPesan = `Halo Nova Sindo Raya, ada yang ingin kami diskusikan:%0A%0A` +
-                      `*Kategori Inquiry:* ${region} (${destinationEmail})%0A` +
-                      `*Nama:* ${fullName}%0A` +
-                      `*Perusahaan:* ${company}%0A` +
-                      `*Email:* ${email}%0A` +
-                      `*No. HP:* ${phone}%0A` +
-                      `*Product Interest:* ${interests}%0A%0A` +
-                      `*Pesan:*%0A${message}`;
-
     setTimeout(() => {
       setLoading(false);
-      window.open(`https://wa.me/${nomorWA}?text=${teksPesan}`, "_blank");
       toast({
-        title: "Redirecting to WhatsApp...",
-        description: "Please confirm your pre-filled message in the chat app.",
+        title: "Message Sent!",
+        description: "Thank you for contacting us. Our team will get back to you shortly.",
       });
       target.reset();
       setSelectedInterests([]);
@@ -171,16 +150,6 @@ const ContactSection = () => {
                 </p>
               </div>
             </div>
-
-            <a
-              href="https://wa.me/6285123901305"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-[hsl(142,70%,40%)] text-white font-medium hover:bg-[hsl(142,70%,35%)] transition-colors min-h-[48px]"
-            >
-              <MessageCircle size={20} />
-              Chat via WhatsApp
-            </a>
 
             {/* GOOGLE MAPS */}
             <div className="rounded-xl overflow-hidden border border-border h-48 w-full shadow-sm bg-muted">
