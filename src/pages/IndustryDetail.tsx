@@ -239,7 +239,11 @@ const industrialCoatingData: {
       image: metalCoatingImg,
       description: "Advanced anti-corrosion primers, protective topcoats, and direct-to-metal (DTM) resin systems for structural steel, machinery, and automotive components.",
       productTypes: [
-        { name: "Acrylic Emulsion" }
+        { name: "Acrylic Emulsion" },
+        { name: "Short Oil Alkyd" },
+        { name: "Thermoplastic Acrylic" },
+        { name: "Thermosetting Acrylic" },
+        { name: "Acrylic Polyol" }
       ],
       keyProducts: [
         {
@@ -262,7 +266,8 @@ const industrialCoatingData: {
       description: "Clear and pigmented polyurethane, nitrocellulose, and UV-curable finishes designed to protect and enhance the natural beauty of wood & furniture.",
       productTypes: [
         { name: "Acrylic Emulsion" },
-        { name: "Self-crosslink Acrylic Emulsion" }
+        { name: "Self-crosslink Acrylic Emulsion" },
+        { name: "Short, Medium, Long Oil Alkyd" }
       ],
       keyProducts: [
         {
@@ -283,7 +288,9 @@ const industrialCoatingData: {
       title: "Plastic Coating",
       image: plasticCoatingImg,
       description: "UV-curable hardcoats, soft-touch coatings, and adhesion promoters for consumer electronics, automotive interiors, and plastic enclosures.",
-      productTypes: [],
+      productTypes: [
+        { name: "Thermoplastic Acrylic" }
+      ],
       keyProducts: [
         {
           name: "AlkiCoat Plastic-UV",
@@ -312,7 +319,9 @@ const additivesData: {
       title: "Defoamer",
       image: defoamerImg,
       description: "High-efficiency non-silicone and mineral-oil defoaming agents designed to eliminate micro-foam, macro-bubbles, and air entrapment during formulation and application.",
-      productTypes: [],
+      productTypes: [
+        { name: "Polymeric Defoamer (non Silicone)" }
+      ],
       keyProducts: [
         {
           name: "AlkiDefoam Air-Zero",
@@ -332,7 +341,9 @@ const additivesData: {
       title: "Leveling",
       image: levelingImg,
       description: "Surface wetting, leveling, and flow control additives formulated to prevent orange peel, cratering, and surface defects while enhancing gloss.",
-      productTypes: [],
+      productTypes: [
+        { name: "Polymeric Leveling (non Silicone)" }
+      ],
       keyProducts: [
         {
           name: "AlkiFlow Level-90",
@@ -352,7 +363,9 @@ const additivesData: {
       title: "Dispersing",
       image: dispersingImg,
       description: "Polymeric dispersants and wetting agents engineered for maximum pigment stabilization, viscosity reduction, and intense color development.",
-      productTypes: [],
+      productTypes: [
+        { name: "Polymeric Dispersing (non Silicone)" }
+      ],
       keyProducts: [
         {
           name: "AlkiAdd Disperse-10",
