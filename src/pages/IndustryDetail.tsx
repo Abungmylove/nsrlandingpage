@@ -539,23 +539,23 @@ const IndustryDetail = () => {
               isConstruction
                 ? constructionHeroImg
                 : isPackaging
-                ? packagingImg
-                : isIndustrial
-                ? industrialCoatingImg
-                : isAdditives
-                ? additivesImg
-                : othersImg
+                  ? packagingImg
+                  : isIndustrial
+                    ? industrialCoatingImg
+                    : isAdditives
+                      ? additivesImg
+                      : othersImg
             }
             alt={
               isConstruction
                 ? "Construction"
                 : isPackaging
-                ? "Printing & Packaging"
-                : isIndustrial
-                ? "Industrial Coating"
-                : isAdditives
-                ? "Additives"
-                : "Others"
+                  ? "Printing & Packaging"
+                  : isIndustrial
+                    ? "Industrial Coating"
+                    : isAdditives
+                      ? "Additives"
+                      : "Others"
             }
             className="w-full h-full object-cover"
           />
@@ -600,24 +600,24 @@ const IndustryDetail = () => {
                   {isConstruction
                     ? "Construction"
                     : isPackaging
-                    ? "Printing & Packaging"
-                    : isIndustrial
-                    ? "Industrial Coating"
-                    : isAdditives
-                    ? "Additives"
-                    : "Others"}
+                      ? "Printing & Packaging"
+                      : isIndustrial
+                        ? "Industrial Coating"
+                        : isAdditives
+                          ? "Additives"
+                          : "Others"}
                 </h1>
 
                 <p className="text-lg md:text-xl text-slate-200 max-w-3xl leading-relaxed">
                   {isConstruction
                     ? constructionData.overview
                     : isPackaging
-                    ? packagingData.overview
-                    : isIndustrial
-                    ? industrialCoatingData.overview
-                    : isAdditives
-                    ? additivesData.overview
-                    : othersData.overview}
+                      ? packagingData.overview
+                      : isIndustrial
+                        ? industrialCoatingData.overview
+                        : isAdditives
+                          ? additivesData.overview
+                          : othersData.overview}
                 </p>
               </motion.div>
             </div>
@@ -627,7 +627,7 @@ const IndustryDetail = () => {
         {/* CONSTRUCTION SPECIAL VIEW (2 COLUMNS) */}
         {isConstruction ? (
           <div className="container mx-auto px-6 py-16 space-y-16">
-            
+
             <div className="text-center max-w-3xl mx-auto mb-8">
               <span className="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">
                 Specialized Sectors
@@ -642,7 +642,7 @@ const IndustryDetail = () => {
 
             {/* 2 COLUMNS GRID */}
             <div className="grid lg:grid-cols-2 gap-10 items-start">
-              
+
               {/* LEFT COLUMN: DECORATIVES & WATERPROOFING */}
               <div className="space-y-10">
                 <motion.div
@@ -672,17 +672,10 @@ const IndustryDetail = () => {
                     </div>
                   </div>
 
-                  <div className="p-7 flex-1 flex flex-col justify-between">
-                    <p className="text-slate-700 leading-relaxed text-base mb-4">
+                  <div className="p-7 flex-1 flex flex-col">
+                    <p className="text-slate-700 leading-relaxed text-base">
                       {decSub.description}
                     </p>
-
-                    <div className="flex items-center text-blue-600 font-semibold text-sm pt-2 border-t border-slate-200/60">
-                      <div className="flex items-center gap-2">
-                        <Sparkles size={16} />
-                        <span>High Durability & Certified</span>
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
 
@@ -752,17 +745,10 @@ const IndustryDetail = () => {
                     </div>
                   </div>
 
-                  <div className="p-7 flex-1 flex flex-col justify-between">
-                    <p className="text-slate-700 leading-relaxed text-base mb-4">
+                  <div className="p-7 flex-1 flex flex-col">
+                    <p className="text-slate-700 leading-relaxed text-base">
                       {floorSub.description}
                     </p>
-
-                    <div className="flex items-center text-blue-600 font-semibold text-sm pt-2 border-t border-slate-200/60">
-                      <div className="flex items-center gap-2">
-                        <Sparkles size={16} />
-                        <span>High Durability & Certified</span>
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
 
@@ -831,7 +817,7 @@ const IndustryDetail = () => {
         ) : isPackaging ? (
           /* PRINTING & PACKAGING SPECIAL VIEW (3 COLUMNS) */
           <div className="container mx-auto px-6 py-16 space-y-16">
-            
+
             <div className="text-center max-w-3xl mx-auto mb-8">
               <span className="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">
                 Specialized Sectors
@@ -848,7 +834,7 @@ const IndustryDetail = () => {
             <div className="grid lg:grid-cols-3 gap-8 items-start">
               {packagingData.subCategories.map((sub, idx) => (
                 <div key={sub.title} className="space-y-10">
-                  
+
                   {/* TOP CONTAINER CARD */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -958,7 +944,7 @@ const IndustryDetail = () => {
         ) : isIndustrial ? (
           /* INDUSTRIAL COATING SPECIAL VIEW (3 COLUMNS) */
           <div className="container mx-auto px-6 py-16 space-y-16">
-            
+
             <div className="text-center max-w-3xl mx-auto mb-8">
               <span className="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">
                 Specialized Sectors
@@ -975,7 +961,7 @@ const IndustryDetail = () => {
             <div className="grid lg:grid-cols-3 gap-8 items-start">
               {industrialCoatingData.subCategories.map((sub, idx) => (
                 <div key={sub.title} className="space-y-10">
-                  
+
                   {/* TOP CONTAINER CARD */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -1085,7 +1071,7 @@ const IndustryDetail = () => {
         ) : isAdditives ? (
           /* ADDITIVES SPECIAL VIEW (3 COLUMNS) */
           <div className="container mx-auto px-6 py-16 space-y-16">
-            
+
             <div className="text-center max-w-3xl mx-auto mb-8">
               <span className="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">
                 Specialized Sectors
@@ -1102,7 +1088,7 @@ const IndustryDetail = () => {
             <div className="grid lg:grid-cols-3 gap-8 items-start">
               {additivesData.subCategories.map((sub, idx) => (
                 <div key={sub.title} className="space-y-10">
-                  
+
                   {/* TOP CONTAINER CARD */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -1212,7 +1198,7 @@ const IndustryDetail = () => {
         ) : isOthers ? (
           /* OTHERS SPECIAL VIEW (4 COLUMNS) */
           <div className="container mx-auto px-6 py-16 space-y-16">
-            
+
             <div className="text-center max-w-3xl mx-auto mb-8">
               <span className="text-sm font-bold text-blue-600 uppercase tracking-widest block mb-2">
                 Specialized Sectors
@@ -1229,7 +1215,7 @@ const IndustryDetail = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
               {othersData.subCategories.map((sub, idx) => (
                 <div key={sub.title} className="space-y-8">
-                  
+
                   {/* TOP CONTAINER CARD */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
