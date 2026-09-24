@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle2, Layers, Sparkles, Building2, Printer, Wrench, Droplets, Settings } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Layers, Building2, Printer, Wrench, Droplets, Settings } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 
@@ -863,17 +863,10 @@ const IndustryDetail = () => {
                       </div>
                     </div>
 
-                    <div className="p-6 flex-1 flex flex-col justify-between">
-                      <p className="text-slate-700 leading-relaxed text-sm mb-4">
+                    <div className="p-6 flex-1 flex flex-col">
+                      <p className="text-slate-700 leading-relaxed text-sm">
                         {sub.description}
                       </p>
-
-                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
-                        <div className="flex items-center gap-1.5">
-                          <Sparkles size={14} />
-                          <span>High Quality Finish</span>
-                        </div>
-                      </div>
                     </div>
                   </motion.div>
 
@@ -990,17 +983,10 @@ const IndustryDetail = () => {
                       </div>
                     </div>
 
-                    <div className="p-6 flex-1 flex flex-col justify-between">
-                      <p className="text-slate-700 leading-relaxed text-sm mb-4">
+                    <div className="p-6 flex-1 flex flex-col">
+                      <p className="text-slate-700 leading-relaxed text-sm">
                         {sub.description}
                       </p>
-
-                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
-                        <div className="flex items-center gap-1.5">
-                          <Sparkles size={14} />
-                          <span>Industrial Grade Protection</span>
-                        </div>
-                      </div>
                     </div>
                   </motion.div>
 
@@ -1117,17 +1103,10 @@ const IndustryDetail = () => {
                       </div>
                     </div>
 
-                    <div className="p-6 flex-1 flex flex-col justify-between">
-                      <p className="text-slate-700 leading-relaxed text-sm mb-4">
+                    <div className="p-6 flex-1 flex flex-col">
+                      <p className="text-slate-700 leading-relaxed text-sm">
                         {sub.description}
                       </p>
-
-                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
-                        <div className="flex items-center gap-1.5">
-                          <Sparkles size={14} />
-                          <span>High Efficiency Formulations</span>
-                        </div>
-                      </div>
                     </div>
                   </motion.div>
 
@@ -1244,17 +1223,10 @@ const IndustryDetail = () => {
                       </div>
                     </div>
 
-                    <div className="p-5 flex-1 flex flex-col justify-between">
-                      <p className="text-slate-700 leading-relaxed text-xs mb-3">
+                    <div className="p-5 flex-1 flex flex-col">
+                      <p className="text-slate-700 leading-relaxed text-xs">
                         {sub.description}
                       </p>
-
-                      <div className="flex items-center text-blue-600 font-semibold text-xs pt-2 border-t border-slate-200/60">
-                        <div className="flex items-center gap-1">
-                          <Sparkles size={13} />
-                          <span>Specialty Grade</span>
-                        </div>
-                      </div>
                     </div>
                   </motion.div>
 
