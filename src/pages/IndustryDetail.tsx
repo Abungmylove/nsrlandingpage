@@ -205,7 +205,11 @@ const packagingData: {
       title: "Functional Coating",
       image: functionalCoatingImg,
       description: "Specialized barrier coatings, heat-seal lacquers, and moisture/grease resistant solutions engineered for food-grade flexible packaging.",
-      productTypes: [],
+      productTypes: [
+        { name: "Film-forming Acrylic Emulsion" },
+        { name: "Non-film Forming Acrylic Emulsion" },
+        { name: "Solid Acrylic Resin" }
+      ],
       keyProducts: [
         {
           name: "AlkiSeal Barrier-G20",
